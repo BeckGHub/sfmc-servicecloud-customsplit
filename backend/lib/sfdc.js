@@ -77,7 +77,7 @@ class ServiceCloud {
 		if (!/^([a-zA-Z0-9]{15}|[a-zA-Z0-9]{18})$/g.test(id)) return cb(new Error('Invalid Salesforce-Id given.'));
 
 		const self = this;
-		const query = 'SELECT <INSERT NAME OF FIELD HERE> FROM <INSERT YOUR OBJECT HERE> WHERE Id = \'' + id + '\'';
+		const query = 'SELECT Id, LastName FROM Lead WHERE Id = \'' + id + '\'';
 
 		// Login if necessary
 		self._login((e) => {

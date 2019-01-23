@@ -1,5 +1,5 @@
 {
-	"name": "<NAME OF YOUR BACKEND MODULE>",
+	"name": "Custom Split",
 	"version": "0.0.2",
 	"description": "Backend for the Salesforce Service Cloud custom split activity",
 	"main": "backend/server.js",
@@ -15,12 +15,12 @@
 	"options": {
 		"salesforce": {
 			"serviceCloud": {
-				"username": "<YOUR SERVICE CLOUD USERNAME>",
-				"password": "<YOUR SERVICE CLOUD PASSWORD>",
-				"loginUrl": "https://login.salesforce.com"
+				"username": "beck.wu@dev11.charket.com",
+				"password": "Charket2018",
+				"loginUrl": "https://charket-mini-program-dev11.my.salesforce.com"
 			},
 			"marketingCloud": {
-				"jwtSecret": "<YOUR UNCONVERTED SALT KEY HERE>"
+				"jwtSecret": "Hello world"
 			}
 		}
 	}
