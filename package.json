@@ -1,5 +1,5 @@
 {
-	"name": "Custom Split",
+	"name": "CustomSplit",
 	"version": "0.0.2",
 	"description": "Backend for the Salesforce Service Cloud custom split activity",
 	"main": "backend/server.js",
