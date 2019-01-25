@@ -35,6 +35,9 @@ app.post('/activity/execute', (req, res) => {
 
 			// Call the function that retrieves desired data from Service Cloud
 			sfdc.retrieveFieldOfObject(serviceCloudId, (err, fieldValue) => {
+
+return res.status(200).json({branchResult: '<KEY FOR PATH 1>'});
+
 				if (err) {
 					console.error(err);
 					return res.status(500).end();
