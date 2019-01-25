@@ -63,9 +63,9 @@ return res.status(200).json({branchResult: '<KEY FOR PATH 1>'});
 app.post(/\/activity\/(save|publish|validate)/, (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		// verification error -> unauthorized request
-
+console.log('decoded:' + decoded);
 		if (err)	return res.status(401).end();
-console.error('Test Error.');
+
 		return res.status(200).json({success: true});
 	});
 });
