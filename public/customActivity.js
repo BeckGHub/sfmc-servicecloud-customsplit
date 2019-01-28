@@ -24,6 +24,7 @@ define(function (require) {
 	}
 
 	function onClickedNext () {
+console.log('test enter');
 		if (currentStep.key === 'idselection') {
 			save();
 		} else {
