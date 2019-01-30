@@ -34,11 +34,16 @@ console.log('decoded111:' + JSON.stringify(decoded));
 			// TODO: Read the Service Cloud object's Id from inArguments here and
 			// write it to the serviceCloudId variable
 
+if(!serviceCloudId) {
+	return res.status(200).json({branchResult: 'Test Path 1'});
+}
+
 			// Call the function that retrieves desired data from Service Cloud
 			sfdc.retrieveFieldOfObject(serviceCloudId, (err, fieldValue) => {
 
-return res.status(200).json({branchResult: '<KEY FOR PATH 1>'});
-
+if (fieldValue != null) {
+	return res.status(200).json({branchResult: 'Test Path 2'});
+}
 				if (err) {
 					console.error(err);
 					return res.status(500).end();

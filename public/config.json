@@ -43,18 +43,18 @@
 	"outcomes": [
 		{
 			"arguments": {
-				"branchResult": "<KEY FOR PATH 1>"
+				"branchResult": "Test Path 1"
 			},
 			"metaData": {
-				"label": "<LABEL FOR PATH 1>"
+				"label": "Test Path 1"
 			}
 		},
 		{
 			"arguments": {
-				"branchResult": "<KEY FOR PATH 2>"
+				"branchResult": "Test Path 2"
 			},
 			"metaData": {
-				"label": "<LABEL FOR PATH 2>"
+				"label": "Test Path 2"
 			}
 		}
 	],
