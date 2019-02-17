@@ -68,7 +68,7 @@ console.log('test enter');
 	}
 
 	function requestedInteractionHandler (settings) {
-console.log('settings:' + settings);
+console.log('settings:' + JSON.stringify(settings));
 		try {
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
