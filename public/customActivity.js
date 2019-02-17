@@ -16,6 +16,7 @@ define(function (require) {
 	$(window).ready(function () {
 		connection.trigger('ready');
 		connection.trigger('requestInteraction');
+connection.trigger('requestTokens');
 	});
 
 	function initialize (data) {
