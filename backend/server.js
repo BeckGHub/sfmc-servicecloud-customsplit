@@ -129,7 +129,7 @@ function getJWTSignedToken_nJWTLib(sfdcUserName){
 }
 
 function encryptUsingPrivateKey_nJWTLib (claims) {
-	var absolutePath = Path.resolve("key.pem"); 	
+	var absolutePath = Path.resolve("backend/key.pem"); 	
     var cert = fs.readFileSync(absolutePath );	
 	var jwt_token = nJwt.create(claims,cert,'RS256');	
 	console.log(jwt_token);	
