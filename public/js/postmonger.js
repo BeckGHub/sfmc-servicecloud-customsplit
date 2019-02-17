@@ -235,6 +235,7 @@ requirejs.onError = function (err) {
 
 	//Create a new Postmonger Session
 	Session = Postmonger.Session = function () {
+console.log('arguments:' + JSON.stringify(arguments));
 		var args = (arguments.length>0) ? Array.prototype.slice.call(arguments, 0) : [{}];
 		var connections = [];
 		var incoming = new Events();
