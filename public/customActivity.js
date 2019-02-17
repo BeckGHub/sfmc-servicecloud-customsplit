@@ -6,7 +6,8 @@ define(function (require) {
 	var payload = {};
 	var steps = [
 		{'key': 'eventdefinitionkey', 'label': 'Event Definition Key'},
-		{'key': 'idselection', 'label': 'ID Selection'}
+		{'key': 'idselection', 'label': 'ID Selection'},
+		{'key': 'sfusername', 'label': 'Salesforce Username'}
 	];
 	var currentStep = steps[0].key;
 	var eventDefinitionKey = '';
@@ -25,7 +26,7 @@ define(function (require) {
 
 	function onClickedNext () {
 console.log('test enter');
-		if (currentStep.key === 'idselection') {
+		if (currentStep.key === 'sfusername') {
 			save();
 		} else {
 			connection.trigger('nextStep');
@@ -59,10 +60,15 @@ console.log('test enter');
 			$('#step2').show();
 			$('#step2 input').focus();
 			break;
+		case 'sfusername':
+			$('#step3').show();
+			$('#step3 input').focus();
+			break;
 		}
 	}
 
 	function requestedInteractionHandler (settings) {
+console.log('settings:' + settings);
 		try {
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);

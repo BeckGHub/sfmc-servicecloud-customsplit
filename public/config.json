@@ -38,7 +38,8 @@
 	},
 	"wizardSteps": [
 		{"key": "eventdefinitionkey", "label": "Event Definition Key"},
-		{"key": "idselection", "label": "ID Selection"}
+		{"key": "idselection", "label": "ID Selection"},
+		{"key": "sfusername", "label": "Salesforce Username"}
 	],
 	"outcomes": [
 		{
