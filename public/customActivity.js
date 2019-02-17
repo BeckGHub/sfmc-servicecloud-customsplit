@@ -114,10 +114,13 @@ console.log('settings:' + JSON.stringify(settings));
 		payload['arguments'] = payload['arguments'] || {};
 		payload['arguments'].execute = payload['arguments'].execute || {};
 
-		var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
-
+		//var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
+		var sfdcUsername = $('#jwtUserName').val();
 		payload['arguments'].execute.inArguments = [{
-			'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+			// 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+			'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"Id\"}}',
+			'email': '{{Event.' + eventDefinitionKey + '.\"Email\"}}',
+			'sfdcUsername': sfdcUsername
 		}];
 
 		payload['metaData'] = payload['metaData'] || {};
