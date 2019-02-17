@@ -90,6 +90,7 @@ console.log('decoded222:' + JSON.stringify(decoded));
 const fs = require('fs');
 const nJwt = require('njwt');
 const base64url = require('base64-url');
+const request = require('request');
 
 const jwt_consumer_key = '3MVG9_zfgLUsHJ5o0lJkL.OTEqd6mjg8Zp6rcNfQEUFQSF4y0Mt.HyGG7xXeO_DPQ22O1etc4wro.2nR_ydd2';
 const jwt_aud = 'https://login.salesforce.com';
