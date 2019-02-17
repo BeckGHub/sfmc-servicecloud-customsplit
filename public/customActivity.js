@@ -127,6 +127,7 @@ console.log('settings:' + JSON.stringify(settings));
 		connection.trigger('updateActivity', payload);
 	}
 
+	connection.on('requestedTokens', function(tokens) { console.log('requestedTokens:' + JSON.stringify(tokens)); });
 	connection.on('initActivity', initialize);
 	connection.on('clickedNext', onClickedNext);
 	connection.on('clickedBack', onClickedBack);
