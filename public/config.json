@@ -4,7 +4,7 @@
 		"icon": "images/icon.png",
 		"iconSmall": "images/icon_small.png"
 	},
-	"type": "REST",
+	"type": "RESTDECISION",
 	"lang": {
 		"en-US": {
 			"name": "Service Cloud Custom Split",
@@ -41,24 +41,24 @@
 		{"key": "idselection", "label": "ID Selection"},
 		{"key": "sfusername", "label": "Salesforce Username"}
 	],
-	// "outcomes": [
-	// 	{
-	// 		"arguments": {
-	// 			"branchResult": "Test Path 1"
-	// 		},
-	// 		"metaData": {
-	// 			"label": "Test Path 1"
-	// 		}
-	// 	},
-	// 	{
-	// 		"arguments": {
-	// 			"branchResult": "Test Path 2"
-	// 		},
-	// 		"metaData": {
-	// 			"label": "Test Path 2"
-	// 		}
-	// 	}
-	// ],
+	"outcomes": [
+		{
+			"arguments": {
+				"branchResult": "Test Path 1"
+			},
+			"metaData": {
+				"label": "Test Path 1"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "Test Path 2"
+			},
+			"metaData": {
+				"label": "Test Path 2"
+			}
+		}
+	],
 	"userInterfaces": {
 		"runningModal": {
 			"url": "runningModal.html"
