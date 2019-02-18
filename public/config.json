@@ -7,8 +7,8 @@
 	"type": "REST",
 	"lang": {
 		"en-US": {
-			"name": "Service Cloud Custom Split",
-			"description": "Custom Split activity that makes a decision based on data from Service Cloud"
+			"name": "Send WeChat Notification",
+			"description": "Custom Split activity to send WeChat Notification based on data from Service Cloud"
 		}
 	},
 	"workflowApiVersion": "1.1",
