@@ -114,10 +114,34 @@ app.get('/jwt', function (req,res){
 				
 	request(req_sfdcOpts, 
 		function(err, remoteResponse, remoteBody) {
-			extractAccessToken(err, remoteResponse, remoteBody, res); 
+			// var authorInfo = extractAccessToken(err, remoteResponse, remoteBody, res); 
+			console.log(remoteBody) ;
+			var sfdcResponse = JSON.parse(remoteBody); 
+			if(sfdcResponse.access_token){	
+				sendNotification(sfdcResponse, request);			 
+			}else{
+				console.log('Some error occurred. Make sure connected app is approved previously if its JWT flow, Username and Password is correct if its Password flow. ');
+				console.log(' Salesforce Response : ');
+				console.log( remoteBody ); 
+			} 
 		} 
 	); 
 } );
+
+function sendNotification(sfdcResponse, request) {
+	var options = { method: 'GET',
+		  url: sfdcResponse.instance_url + '/services/apexrest/JourneyBuilder/v1/execute',
+		  headers: { 'cache-control': 'no-cache',
+		     'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW',
+		     authorization: 'Bearer ' + sfdcResponse.access_token },
+		  formData: {} };
+
+	request(options, function (error, response, body) {
+	  if (error) throw new Error(error);
+
+	  console.log(body);
+	});
+}
 
 function getJWTSignedToken_nJWTLib(sfdcUserName){ 
 	var claims = {
@@ -148,6 +172,7 @@ function extractAccessToken(err, remoteResponse, remoteBody,res){
 	console.log(remoteBody) ;
 	var sfdcResponse = JSON.parse(remoteBody); 
 	
+	/*
 	//success
 	if(sfdcResponse.access_token){				 
 		res.writeHead(302, {
@@ -160,6 +185,7 @@ function extractAccessToken(err, remoteResponse, remoteBody,res){
 		res.write( remoteBody ); 
 	} 
 	res.end();
+	*/
 }
 
 
