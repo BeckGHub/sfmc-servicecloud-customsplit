@@ -129,6 +129,8 @@ app.get('/jwt', function (req,res){
 			} 
 		} 
 	); 
+
+	res.end();
 } );
 
 function sendNotification(sfdcResponse, request) {
