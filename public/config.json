@@ -41,14 +41,6 @@
 		{"key": "idselection", "label": "ID Selection"},
 		{"key": "sfusername", "label": "Salesforce Username"}
 	],
-	"userInterfaces": {
-		"runningModal": {
-			"url": "runningModal.html"
-		},
-		"runningHover": {
-			"url": "runningHover.html"
-		}
-	},
 	"arguments": {
 		"execute": {
 			"inArguments": [],

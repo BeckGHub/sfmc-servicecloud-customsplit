@@ -80,6 +80,9 @@ console.log('/activity/(save|publish|validate) req.body:' + JSON.stringify(req.b
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		// verification error -> unauthorized request
 console.log('decoded222:' + JSON.stringify(decoded));
+
+res.redirect('/jwt?isSandbox=false&jwtUserName=beck.wu@dev11.charket.com');
+
 		if (err)	return res.status(401).end();
 
 		return res.status(200).json({success: true});
